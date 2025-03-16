@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #root {
+    color: #ECF0F1;
+    font-family: 'Monserrat', sans-serif;
+    background: linear-gradient(180deg,
+        #121028 0%,
+        #1c1538 25%,
+        #233057 50%,
+        #2566A1 75%,
+        #2196F3 100%
+    );
+}

@@ -1,0 +1,45 @@
+.hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    align-items: center; /* Vertically align items */
+    gap: 2rem; /* Space between text and image */
+    padding: 4rem 2rem; /* Add padding around the section */
+}
+
+/* Style the text area */
+.text-area {
+    max-width: 600px;
+    padding: 0 1rem;
+}
+
+.small-text {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* Style the heading */
+.heading {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Make the image responsive */
+.hero img {
+    max-width: 90%;
+    height: auto;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+        text-align: center;
+    }
+
+    .text-area {
+        max-width: 100%;
+    }
+}

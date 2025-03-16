@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 50px 50px;
+    height: 80px;  /* Adjust based on your design */
+}
+
+
+.logo {
+    height: 10vh;
+}
+
+@media (max-width: 500px) {
+    .navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    height: 80px;  /* Adjust based on your design */
+    }
+
+
+    .logo {
+        width: auto;
+        height: 50px;
+    }
+
+}

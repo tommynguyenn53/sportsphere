@@ -1,13 +1,24 @@
-# React + Vite
+# Sportsphere  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic sports statistics web application built with ReactJS and react-select, allowing users to explore statistics for different sports with an intuitive dropdown selection system that enables the user to view the stats they want to look like.   
 
-Currently, two official plugins are available:
+## Live Demo  
+To view the live version of this project, simply click on the link below:  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[View Sportsphere](#) _(Will place link when a fully working version is up and running)_  
 
-## Expanding the ESLint configuration
+## Features  
+- Users can select a sport (e.g., Formula 1 or Football) to view relevant statistics.  
+- Dynamic dropdown options that update based on the selected sport.  
+- Reset functionality ensures selections do not persist when switching sports.  
+- Custom-styled dropdowns using react-select for a sleek UI.  
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# sportsphere
+## Technologies Used  
+- **ReactJS**: Component-based architecture for building UI.  
+- **react-select**: Provides customizable and accessible dropdowns.  
+- **CSS**: Custom styling for dropdowns and layout.  
+
+## Future Enhancements  
+- Integration with a sports API to fetch real-time statistics.  
+- Additional sports categories and deeper statistic breakdowns.  
+- Improved UI animations and accessibility features.  
