@@ -1,8 +1,8 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 
 const options1 = [
-  { value: "", label: "What sport would you like stats on?"},
+  { value: "", label: "What sport would you like stats on?" },
   { value: "formula 1", label: "Formula 1" },
   { value: "football", label: "Football" },
 ];
@@ -14,7 +14,6 @@ const optionsForF1 = [
   { value: "most podiums", label: "Most Podiums" },
   { value: "most fastest laps", label: "Most Fastest Lap" },
   { value: "fastest lap at a given circuit", label: "Fastest Lap at a given circuit" },
-
 ];
 
 const optionsForFootball = [
@@ -24,120 +23,83 @@ const optionsForFootball = [
   { value: "most wins", label: "Most Wins" },
 ];
 
-const customStyles1 = {
+// Custom Styles
+const customStyles = {
   control: (base) => ({
     ...base,
-    backgroundColor: "#121028", // Dark background
+    backgroundColor: "#121028",
     borderColor: "#121028",
-    color: "white", // Ensure text color is white
+    color: "white",
     boxShadow: "none",
-
     height: "75px",
     "&:hover": { borderColor: "#121028" },
   }),
   singleValue: (base) => ({
     ...base,
-    color: "white", // Ensures selected text is white
+    color: "white",
   }),
   menu: (base) => ({
     ...base,
-    backgroundColor: "#121028", // Light yellow menu
-
-
+    backgroundColor: "#121028",
   }),
   option: (base, { isFocused, isSelected }) => ({
     ...base,
     backgroundColor: isSelected ? "#121028" : isFocused ? "#121028" : "#121028",
-    color: "white", // Ensures dropdown text is white
-    padding: "15px"
+    color: "white",
+    padding: "15px",
   }),
   placeholder: (base) => ({
     ...base,
-    color: "white", // Change placeholder text color
+    color: "white",
   }),
 };
 
-const customStyles2 = {
-  control: (base) => ({
-    ...base,
-    backgroundColor: "#121028", // Dark background
-    borderColor: "#121028",
-    color: "white", // Ensure text color is white
-    boxShadow: "none",
-    height: "75px",
-    lineHeight:"25px",
-    "&:hover": { borderColor: "#121028" },
-  }),
-  singleValue: (base) => ({
-    ...base,
-    color: "white", // Ensures selected text is white
-  }),
-  menu: (base) => ({
-    ...base,
-    backgroundColor: "#121028", // Light blue menu
-  }),
-  option: (base, { isFocused, isSelected }) => ({
-    ...base,
-    backgroundColor: isSelected ? "#121028" : isFocused ? "#121028" : "#121028",
-    color: "white", // Ensures dropdown text is white
-    padding: "15px"
-  }),
-  placeholder: (base) => ({
-    ...base,
-    color: "white", // Change placeholder text color
-  }),
-};
+function Dropdown({ setSelectedStat }) {
+  const [selectedSport, setSelectedSport] = useState(null);
+  const [selectedStat, setLocalSelectedStat] = useState(null);
 
-
-function Dropdown() {
-  const [selectedOption1, setSelectedOption1] = useState(null);
-  const [selectedOption2, setSelectedOption2] = useState(null);
-
+  // Get second dropdown options based on selected sport
   const getOptionsForSecondDropdown = () => {
-    if (selectedOption1?.value === "formula 1") {
-      return optionsForF1;
-    } else if (selectedOption1?.value === "football") {
-      return optionsForFootball;
-    }
+    if (selectedSport?.value === "formula 1") return optionsForF1;
+    if (selectedSport?.value === "football") return optionsForFootball;
     return [];
   };
 
-  const handleFirstDropdownChange = (newSelection) => {
-    setSelectedOption1(newSelection);
-    setSelectedOption2(null); // Reset second dropdown when first option is changed
+  // Handle first dropdown selection
+  const handleSportChange = (newSelection) => {
+    setSelectedSport(newSelection);
+    setLocalSelectedStat(null); // Reset second dropdown
+    setSelectedStat(null); // Reset global stat
+  };
+
+  // Handle second dropdown selection
+  const handleStatChange = (newSelection) => {
+    setLocalSelectedStat(newSelection);
+    setSelectedStat(newSelection?.value); // Pass selected stat to App.jsx
   };
 
   return (
     <div className="dropdown-container" style={{ padding: "4rem 3rem" }}>
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-          flexDirection: "column",
-          maxWidth: "350px",
-          color: "white",
-
-        }}
-      >
+      <div style={{ display: "flex", gap: "1rem", flexDirection: "column", maxWidth: "350px", color: "white" }}>
         {/* First Dropdown */}
         <Select
           options={options1}
-          value={selectedOption1}
-          onChange={handleFirstDropdownChange}
-          styles={customStyles1}
+          value={selectedSport}
+          onChange={handleSportChange}
+          styles={customStyles}
           isSearchable={false}
           placeholder="What sport would you like stats on?"
         />
 
         {/* Second Dropdown (conditionally rendered) */}
-        {selectedOption1?.value && (
+        {selectedSport?.value && (
           <Select
             options={getOptionsForSecondDropdown()}
-            value={selectedOption2}
-            onChange={setSelectedOption2}
-            styles={customStyles2}
+            value={selectedStat}
+            onChange={handleStatChange}
+            styles={customStyles}
             isSearchable={false}
-            placeholder={`Select ${selectedOption1 ? selectedOption1.label : ''} stats to learn about`}
+            placeholder={`Select ${selectedSport?.label} stats to learn about`}
           />
         )}
       </div>
