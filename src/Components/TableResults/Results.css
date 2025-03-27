@@ -7,13 +7,12 @@
   justify-content: center; /* Ensures content inside is centered */
 }
 
-
 /* Table styling */
 .race-results {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-    align-items: center;
+  align-items: center;
 }
 
 /* Header row styling */
@@ -22,27 +21,30 @@
 }
 
 .race-results th {
-  padding: 12px;
-
+  padding: 15px; /* Increased padding for better spacing */
+  background-color: #121028;
+  color: white;
 }
 
 /* Body row styling */
 .race-results td {
-  padding: 10px;
+  padding: 15px; /* Increased padding for better spacing */
+  color: white;
 }
 
 /* Alternating row colors */
 .even-row {
-    background-color: rgba(18, 16, 40, 0.5);
-
+  background-color: rgba(18, 16, 40, 0.5);
 }
 
 .odd-row {
+  background-color: rgba(18, 16, 40, 0.3); /* Added color for odd rows */
 }
 
 /* Hover effect */
 .race-results tbody tr:hover {
   transition: 0.2s;
+  background-color: rgba(18, 16, 40, 0.7); /* Slightly darker on hover */
 }
 
 /* Make table responsive */

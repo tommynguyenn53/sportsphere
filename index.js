@@ -1,5 +1,5 @@
 import express from 'express';
-import { getRaceResults } from './sportspheremodel.js'; // Function to fetch results
+import { getStats } from './sportspheremodel.js'; // Function to fetch results
 
 const app = express();
 const port = 3001;
@@ -13,10 +13,12 @@ app.use((req, res, next) => {
   next();
 });
 
-// New API endpoint for race results
-app.get('/results', async (req, res) => {
+// API endpoint for stats
+app.get('/getStats', async (req, res) => {
+  const { stat } = req.query;
+
   try {
-    const results = await getRaceResults(); // Fetch data from DB
+    const results = await getStats(stat); // Fetch data from DB
     res.status(200).json(results);
   } catch (error) {
     res.status(500).json({ error: error.message });

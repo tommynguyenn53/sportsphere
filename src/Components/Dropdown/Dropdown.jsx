@@ -79,31 +79,37 @@ function Dropdown({ setSelectedStat }) {
   };
 
   return (
-    <div className="dropdown-container" style={{ padding: "4rem 3rem" }}>
-      <div style={{ display: "flex", gap: "1rem", flexDirection: "column", maxWidth: "350px", color: "white" }}>
-        {/* First Dropdown */}
-        <Select
-          options={options1}
-          value={selectedSport}
-          onChange={handleSportChange}
-          styles={customStyles}
-          isSearchable={false}
-          placeholder="What sport would you like stats on?"
-        />
+      <div>
+        <h1
+            style={{fontSize: '40px', fontWeight: 'bold', textTransform: 'uppercase', paddingLeft:"50px"}}>
+          Choose Your Sport Stats
+        </h1>
+        <div className="dropdown-container" style={{padding: "4rem 3rem"}}>
+          <div style={{display: "flex", gap: "1rem", flexDirection: "column", maxWidth: "350px", color: "white"}}>
+            {/* First Dropdown */}
+            <Select
+                options={options1}
+                value={selectedSport}
+                onChange={handleSportChange}
+                styles={customStyles}
+                isSearchable={false}
+                placeholder="What sport would you like stats on?"
+            />
 
-        {/* Second Dropdown (conditionally rendered) */}
-        {selectedSport?.value && (
-          <Select
-            options={getOptionsForSecondDropdown()}
-            value={selectedStat}
-            onChange={handleStatChange}
-            styles={customStyles}
-            isSearchable={false}
-            placeholder={`Select ${selectedSport?.label} stats to learn about`}
-          />
-        )}
+            {/* Second Dropdown (conditionally rendered) */}
+            {selectedSport?.value && (
+                <Select
+                    options={getOptionsForSecondDropdown()}
+                    value={selectedStat}
+                    onChange={handleStatChange}
+                    styles={customStyles}
+                    isSearchable={false}
+                    placeholder={`Select ${selectedSport?.label} stats to learn about`}
+                />
+            )}
+          </div>
+        </div>
       </div>
-    </div>
   );
 }
 

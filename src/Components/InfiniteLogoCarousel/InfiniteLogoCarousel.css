@@ -1,0 +1,56 @@
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the logos vertically */
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+}
+
+.logos:after {
+  right: 0;
+}
+
+.logos-wrapper {
+  display: flex;
+  width: max-content; /* Ensures the wrapper expands to fit all logos */
+  justify-content: center; /* Center the logos horizontally */
+  align-items: center; /* Center the logos vertically */
+}
+
+.logos-slide {
+  display: flex;
+  align-items: center; /* Center the logos vertically */
+  animation: slide 10s linear infinite;
+}
+
+.logos-slide img {
+  margin: 0 40px;
+  background: none;
+  height: 70px; /* Ensure consistent height for all logos */
+}
+

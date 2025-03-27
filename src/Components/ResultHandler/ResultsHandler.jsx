@@ -1,12 +1,37 @@
-import React from 'react';
-import Results from "../TableResults/Results.jsx";
+import React, { useEffect, useState } from "react";
+import RaceResultsTable from "../TableResults/Results.jsx";
+import "./ResultHandler.css"
 
-function ResultsHandler({ selectedStat }) {
-    return (
+const capitalizeFirstLetter = (string) => {
+  return string.replace(/\b\w/g, (char) => char.toUpperCase());
+};
+
+const ResultsHandler = ({ selectedStat }) => {
+  const [data, setData] = useState([]);
+  const [tableTitle, setTableTitle] = useState("");
+
+  useEffect(() => {
+    if (!selectedStat) return; // Don't fetch if no selection
+
+    fetch(`http://localhost:3001/getStats?stat=${encodeURIComponent(selectedStat)}`)
+      .then((response) => response.json())
+      .then((fetchedData) => {
+        setData(fetchedData);
+        setTableTitle(selectedStat);
+      })
+      .catch((error) => console.error("Error fetching results:", error));
+  }, [selectedStat]);
+
+  return (
+    <div className="results-container">
+      {selectedStat && (
         <>
-            {selectedStat === "fastest lap at a given circuit" && <Results />}
+          <h2 className="table-heading">{capitalizeFirstLetter(tableTitle)}</h2> {/* Display the stat title */}
+          <RaceResultsTable results={data} />
         </>
-    );
-}
+      )}
+    </div>
+  );
+};
 
 export default ResultsHandler;

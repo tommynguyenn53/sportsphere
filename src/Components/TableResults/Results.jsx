@@ -1,34 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Results.css";
 
-const RaceResultsTable = () => {
-  const [raceResults, setRaceResults] = useState([]);
+// Function to capitalize the first letter of each word
+const capitalizeFirstLetter = (string) => {
+  return string.replace(/\b\w/g, (char) => char.toUpperCase());
+};
 
-  useEffect(() => {
-    fetch("http://localhost:3001/results") // Call API endpoint
-      .then((response) => response.json())
-      .then((data) => setRaceResults(data))
-      .catch((error) => console.error("Error fetching results:", error));
-  }, []);
+const RaceResultsTable = ({ results }) => {
+  if (results.length === 0) return null; // Hide table if no data
+
+  const headers = Object.keys(results[0]); // Extract column names dynamically
 
   return (
     <div className="table-container">
       <table className="race-results">
         <thead>
           <tr>
-            <th>Track Name</th>
-            <th>Driver Name</th>
-            <th>Nationality</th>
-            <th>Time</th>
+            {headers.map((header, index) => (
+              <th key={index}>{capitalizeFirstLetter(header.replace(/_/g, " "))}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {raceResults.map((result, index) => (
-            <tr key={index} className={index % 2 === 0 ? "even-row" : "odd-row"}>
-              <td>{result.track_name}</td>
-              <td>{result.driver}</td>
-              <td>{result.nationality}</td>
-              <td>{result.time}</td>
+          {results.map((row, rowIndex) => (
+            <tr key={rowIndex} className={rowIndex % 2 === 0 ? "even-row" : "odd-row"}>
+              {headers.map((header, colIndex) => (
+                <td key={colIndex}>{row[header]}</td>
+              ))}
             </tr>
           ))}
         </tbody>
