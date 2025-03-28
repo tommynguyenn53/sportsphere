@@ -3,7 +3,7 @@
     flex-direction: row; /* Align items horizontally */
     align-items: center; /* Vertically align items */
     justify-content: space-between; /* Space between the text and the content */
-    padding: 4rem 2rem; /* Add padding around the section */
+    padding: 3rem 2rem; /* Add padding around the section */
 }
 
 /* Style the text area */

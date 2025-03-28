@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 import RaceResultsTable from "../TableResults/Results.jsx";
 import "./ResultHandler.css"
 
-const capitalizeFirstLetter = (string) => {
-  return string.replace(/\b\w/g, (char) => char.toUpperCase());
-};
-
 const ResultsHandler = ({ selectedStat }) => {
   const [data, setData] = useState([]);
   const [tableTitle, setTableTitle] = useState("");
@@ -26,7 +22,7 @@ const ResultsHandler = ({ selectedStat }) => {
     <div className="results-container">
       {selectedStat && (
         <>
-          <h2 className="table-heading">{capitalizeFirstLetter(tableTitle)}</h2> {/* Display the stat title */}
+          <h2 className="table-heading">{tableTitle.toUpperCase()}</h2> {/* Display the stat title */}
           <RaceResultsTable results={data} />
         </>
       )}

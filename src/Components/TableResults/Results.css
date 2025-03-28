@@ -5,6 +5,7 @@
   margin: 20px auto; /* Center horizontally */
   display: flex;
   justify-content: center; /* Ensures content inside is centered */
+  margin-bottom: 100px;
 }
 
 /* Table styling */
@@ -45,6 +46,19 @@
 .race-results tbody tr:hover {
   transition: 0.2s;
   background-color: rgba(18, 16, 40, 0.7); /* Slightly darker on hover */
+}
+
+/* Style for athlete links */
+.athlete-link {
+  color: white; /* Change the color to your preference */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.athlete-link:hover {
+  color: white; /* Change the color on hover */
+    font-weight: bold; /* Make the link text bold */
+  text-decoration: underline; /* Add underline on hover */
 }
 
 /* Make table responsive */

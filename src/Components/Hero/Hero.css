@@ -9,7 +9,7 @@
 /* Style the text area */
 .text-area {
     max-width: 600px;
-    padding: 0 1rem;
+    padding: 0 2.5rem;
 }
 
 .small-text {
@@ -30,6 +30,7 @@
 .hero img {
     max-width: 90%;
     height: auto;
+    border-radius: 1%;
 }
 
 /* Responsive for smaller screens */

@@ -12,7 +12,7 @@ function Hero(props) {
             </div>
 
             <div>
-                <img src="../../../public/Test.png"/>
+                <img src="../../../public/Test11.png"/>
             </div>
         </div>
 
