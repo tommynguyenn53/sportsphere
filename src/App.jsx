@@ -14,7 +14,7 @@ function App() {
         <div className="App">
             <Navbar />
             <Hero />
-    <InfiniteLogoCarousel/>
+            <InfiniteLogoCarousel/>
 
             {/* Pass setSelectedStat to Dropdown */}
             <Dropdown setSelectedStat={setSelectedStat} />

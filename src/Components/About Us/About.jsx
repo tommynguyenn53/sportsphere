@@ -3,7 +3,7 @@ import "./About.css"
 
 function About(props) {
     return (
-        <div className="about">
+        <div className="about" id="about">
             <div className="about-us">
                 <h1 className="heading">About Us</h1>
                 <p>

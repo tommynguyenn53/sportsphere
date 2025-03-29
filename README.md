@@ -17,6 +17,7 @@ To view the live version of this project, simply click on the link below:
 - **New**: Hyperlinks added to athlete names that direct to their Wikipedia pages.
 - **New**: Logo carousel added to showcase team or sponsor logos.
 - **New**: Image carousel added to highlight key moments or players.
+- **New**: Responsive design ensuring optimal viewing experience across different screen sizes.
 
 ## Technologies Used
 - **ReactJS**: Component-based architecture for building UI.
@@ -33,6 +34,7 @@ To view the live version of this project, simply click on the link below:
 - **Hyperlinks for Athlete Names**: Added dynamic hyperlinks to athlete names that direct users to their respective Wikipedia pages.
 - **Logo Carousel**: Added a logo carousel to display team or sponsor logos.
 - **Image Carousel**: Added an image carousel to showcase key moments or players with descriptive captions.
+- **Responsive Design**: Ensured the web application is fully responsive, providing an optimal viewing experience on desktop, tablet, and mobile devices.
 
 ## Future Enhancements
 - Additional sports categories and deeper statistic breakdowns.

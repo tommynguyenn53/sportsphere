@@ -8,3 +8,10 @@
   margin-bottom: 2rem;
   text-transform: capitalize;
 }
+
+
+@media (max-width: 768px) {
+
+}.table-heading {
+  text-align: left;
+}

@@ -3,7 +3,7 @@ import "./Hero.css"
 
 function Hero(props) {
     return (
-        <div className="hero">
+        <div className="hero" id="hero">
             <div className="text-area">
                 <h1 className="heading">
                     Track Stats, <br/> Unleash Your Competitive Edge
