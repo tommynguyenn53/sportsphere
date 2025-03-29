@@ -1,8 +1,8 @@
 import express from 'express';
+import serverless from 'serverless-http';
 import { getStats } from '../sportspheremodel.js'; // Function to fetch results
 
 const app = express();
-const port = 3001;
 
 app.use(express.json());
 
@@ -25,6 +25,5 @@ app.get('/getStats', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`App running on port ${port}.`);
-});
+// Wrap your Express app into a serverless function
+export const handler = serverless(app);
