@@ -1,5 +1,5 @@
 import express from 'express';
-import { getStats } from './sportspheremodel.js'; // Function to fetch results
+import { getStats } from '../sportspheremodel.js'; // Function to fetch results
 
 const app = express();
 const port = 3001;
