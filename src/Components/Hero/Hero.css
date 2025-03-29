@@ -37,7 +37,7 @@
 @media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr; /* Stack on smaller screens */
-        text-align: center;
+        text-align: left;
     }
 
     .text-area {

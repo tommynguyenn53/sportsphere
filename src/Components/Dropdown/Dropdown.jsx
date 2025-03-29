@@ -5,7 +5,6 @@ const options1 = [
   { value: "", label: "What sport would you like stats on?" },
   { value: "football", label: "Football" },
   { value: "formula 1", label: "Formula 1" }
-
 ];
 
 const optionsForF1 = [
@@ -27,37 +26,37 @@ const optionsForFootball = [
 
 // Custom Styles
 const customStyles = {
-  control: (base) => ({
+  control: (base, state) => ({
     ...base,
     backgroundColor: "#121028",
-    borderColor: "#121028",
+    borderColor: state.isFocused ? "#1a73e8" : "#121028",
     color: "white",
-    boxShadow: "none",
+    boxShadow: state.isFocused ? "0 0 0 1px #1a73e8" : "none",
     height: "75px",
     "&:hover": { borderColor: "#121028" },
-    zIndex: "10"
+    zIndex: state.selectProps.menuIsOpen ? 20 : 10, // Adjust z-index based on menu open state
   }),
   singleValue: (base) => ({
     ...base,
     color: "white",
-    zIndex: "10"
+    zIndex: 10
   }),
   menu: (base) => ({
     ...base,
     backgroundColor: "#121028",
-    zIndex: "10"
+    zIndex: 20
   }),
   option: (base, { isFocused, isSelected }) => ({
     ...base,
-    backgroundColor: isSelected ? "#121028" : isFocused ? "#121028" : "#121028",
+    backgroundColor: isSelected ? "#1a73e8" : isFocused ? "#121028" : "#121028",
     color: "white",
     padding: "15px",
-    zIndex: "10"
+    zIndex: 20
   }),
   placeholder: (base) => ({
     ...base,
     color: "white",
-    zIndex: "10"
+    zIndex: 10
   }),
 };
 
@@ -86,7 +85,7 @@ function Dropdown({ setSelectedStat }) {
   };
 
   return (
-      <div>
+      <div id="dropdown">
         <h1
             style={{fontSize: '3rem', fontWeight: 'bold', textTransform: 'uppercase', paddingLeft:"40px"}}>
           Choose Your Sport Stats
@@ -109,7 +108,31 @@ function Dropdown({ setSelectedStat }) {
                     options={getOptionsForSecondDropdown()}
                     value={selectedStat}
                     onChange={handleStatChange}
-                    styles={customStyles}
+                    styles={{
+                      ...customStyles,
+                      control: (base, state) => ({
+                        ...base,
+                        backgroundColor: "#121028",
+                        borderColor: state.isFocused ? "#1a73e8" : "#121028",
+                        color: "white",
+                        boxShadow: state.isFocused ? "0 0 0 1px #1a73e8" : "none",
+                        height: "75px",
+                        "&:hover": { borderColor: "#121028" },
+                        zIndex: state.selectProps.menuIsOpen ? 15 : 5, // Adjust z-index based on menu open state
+                      }),
+                      menu: (base) => ({
+                        ...base,
+                        backgroundColor: "#121028",
+                        zIndex: 15
+                      }),
+                      option: (base, { isFocused, isSelected }) => ({
+                        ...base,
+                        backgroundColor: isSelected ? "#1a73e8" : isFocused ? "#121028" : "#121028",
+                        color: "white",
+                        padding: "15px",
+                        zIndex: 15
+                      }),
+                    }}
                     isSearchable={false}
                     placeholder={`Select ${selectedSport?.label} stats to learn about`}
                 />
