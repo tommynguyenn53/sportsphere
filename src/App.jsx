@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Navbar from "./components/Navbar/Navbar.jsx";
-import Hero from "./components/Hero/Hero.jsx";
-import About from "./components/About Us/About.jsx";
-import Dropdown from "./components/Dropdown/Dropdown.jsx";
-import ResultsHandler from "./components/ResultHandler/ResultsHandler.jsx";
+import Navbar from "./Components/Navbar/Navbar.jsx";
+import Hero from "./Components/Hero/Hero.jsx";
+import About from "./Components/About Us/About.jsx";
+import Dropdown from "./Components/Dropdown/Dropdown.jsx";
+import ResultsHandler from "./Components/ResultHandler/ResultsHandler.jsx";
 import InfiniteLogoCarousel from "./Components/InfiniteLogoCarousel/InfiniteLogoCarousel.jsx";
 import ImageCarousel from "./Components/ImageCarousel/ImageCarousel.jsx"; // New component
 
