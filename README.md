@@ -5,7 +5,7 @@ A dynamic sports statistics web application built with ReactJS and react-select,
 ## Live Demo
 To view the live version of this project, simply click on the link below:
 
-[View Sportsphere](#) _(Will place link when a fully working version is up and running)_
+[View Sportsphere](https://sportsphere-one.vercel.app/) 
 
 ## Features
 - Users can select a sport (e.g., Formula 1 or Football) to view relevant statistics.
