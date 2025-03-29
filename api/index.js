@@ -28,5 +28,3 @@ app.get('/getStats', async (req, res) => {
 
 // Wrap your Express app into a serverless function
 export const handler = serverless(app);
-
-
