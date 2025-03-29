@@ -2,6 +2,10 @@ import express from 'express';
 import serverless from 'serverless-http';
 import { getStats } from '../sportspheremodel.js'; // Function to fetch results
 
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const app = express();
 
 app.use(express.json());
