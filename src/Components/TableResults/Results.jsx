@@ -14,7 +14,8 @@ const generateWikipediaUrl = (name) => {
 const RaceResultsTable = ({ results }) => {
   if (results.length === 0) return null; // Hide table if no data
 
-  const headers = Object.keys(results[0]); // Extract column names dynamically
+  // Extract column names dynamically
+  const headers = Object.keys(results[0]);
 
   return (
     <div className="table-container">

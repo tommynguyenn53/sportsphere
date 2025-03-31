@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Select from "react-select";
 
+// First dropdown options for selecting the sport
 const options1 = [
   { value: "", label: "What sport would you like stats on?" },
   { value: "football", label: "Football" },
   { value: "formula 1", label: "Formula 1" }
 ];
 
+// Second dropdown options for Formula 1 statistics
 const optionsForF1 = [
   { value: "most championships", label: "Most Championships" },
   { value: "most pole positions", label: "Most Pole Positions" },
@@ -16,6 +18,7 @@ const optionsForF1 = [
   { value: "fastest lap at a given circuit", label: "Fastest Lap at a given circuit" },
 ];
 
+// Second dropdown options for Football statistics
 const optionsForFootball = [
   { value: "most goals", label: "Most Goals" },
   { value: "most assists", label: "Most Assists" },
@@ -24,7 +27,7 @@ const optionsForFootball = [
   { value: "most champions league winners", label: "Most Champions League Winners" },
 ];
 
-// Custom Styles
+// Custom styles for the dropdown components
 const customStyles = {
   control: (base, state) => ({
     ...base,
@@ -61,7 +64,9 @@ const customStyles = {
 };
 
 function Dropdown({ setSelectedStat }) {
+  // State to store the selected sport
   const [selectedSport, setSelectedSport] = useState(null);
+  // State to store the selected statistic
   const [selectedStat, setLocalSelectedStat] = useState(null);
 
   // Get second dropdown options based on selected sport
